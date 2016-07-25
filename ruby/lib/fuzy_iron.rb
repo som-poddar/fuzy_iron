@@ -21,8 +21,8 @@ module FuzyIron
 
     message_count.times do |_i|
       response = qu.post(payload_json.to_json)
-      abort("enqueue failed") unless response.code == 200
-      puts "#{_i+1}: (id - #{response.raw["id"]})"
+      abort('enqueue failed') unless response.code == 200
+      puts "#{_i + 1}: (id - #{response.raw['id']})"
     end
     end_time = Time.now.utc
     puts "(duration: #{end_time - start_time})"
