@@ -17,20 +17,25 @@ module FuzyIron
     qu = client.queue(iron_queue_name)
 
     payload_file = File.read('payload/payload.json', encoding: 'utf-8')
-    payload_json = JSON.parse(payload_file)
+    payload_json = JSON.parse(payload_file, symbolize_names: true)
 
-    10.times do |_i|
-      response = qu.post(payload_file.to_json)
-      puts "response: #{response} \n"
+    message_count.times do |_i|
+      response = qu.post(payload_json.to_json)
+      abort("enqueue failed") unless response.code == 200
+      puts "#{_i+1}: (id - #{response.raw["id"]})"
     end
     end_time = Time.now.utc
-    puts "duration: #{end_time - start_time}"
+    puts "(duration: #{end_time - start_time})"
  end
 
   private
 
   def self.iron_queue_name
     @iron_config['queue_name']
+  end
+
+  def self.message_count
+    YAML.load_file('config/config.yml')['message_count'] || 1
   end
 
   def self.init_iron_client
