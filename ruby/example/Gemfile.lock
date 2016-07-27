@@ -1,0 +1,30 @@
+GIT
+  remote: git@github.com:som-poddar/fuzy_iron.git
+  revision: b11f01345b0682e9792fbfdd12bd57bc664b4013
+  specs:
+    fuzy_iron (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    byebug (9.0.5)
+    iron_core (1.0.9)
+      rest (>= 3.0.4)
+    iron_mq (6.0.2)
+      iron_core (>= 0.5.1)
+    net-http-persistent (2.9.4)
+    netrc (0.11.0)
+    rest (3.0.6)
+      net-http-persistent (>= 2.9.1)
+      netrc
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  byebug
+  fuzy_iron!
+  iron_mq
+
+BUNDLED WITH
+   1.12.5

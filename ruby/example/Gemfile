@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
+
 gem 'byebug'
-# gem 'fuzy_iron', :git=> "git@github.com:som-poddar/fuzy_iron.git", :branch => "with_single_payload"
+gem 'fuzy_iron', :git=> "git@github.com:som-poddar/fuzy_iron.git"
 gem 'iron_mq'
-gem 'fuzy_iron', :path=> "/Users/spoddar/Workspace/opensource/final/fuzy_iron/ruby"
