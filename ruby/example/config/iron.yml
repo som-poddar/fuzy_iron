@@ -1,0 +1,6 @@
+---
+# MQ specific settings from Iron.io goes here
+host:
+project_id:
+token:
+queue_name:
